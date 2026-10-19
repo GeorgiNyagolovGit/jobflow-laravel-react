@@ -1,0 +1,13 @@
+.create-job-page {
+    width: min(760px, calc(100% - 32px));
+    margin: 40px auto;
+}
+
+.create-job-page h1 {
+    color: #0f172a;
+}
+
+.create-job-page > p {
+    margin-bottom: 28px;
+    color: #64748b;
+}

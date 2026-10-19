@@ -1,0 +1,85 @@
+.my-jobs-page {
+    width: min(1000px, calc(100% - 32px));
+    margin: 40px auto;
+}
+
+.my-jobs-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.my-jobs-header h1 {
+    color: #0f172a;
+}
+
+.my-jobs-create {
+    padding: 11px 16px;
+    color: #ffffff;
+    background: #2563eb;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.my-jobs-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.my-job-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.my-job-item h2 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.my-job-item p {
+    margin: 0;
+    color: #64748b;
+}
+
+.my-job-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+}
+
+.my-job-actions a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+.my-job-actions button {
+    padding: 8px 12px;
+    color: #b91c1c;
+    background: #ffffff;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.my-job-actions button:disabled {
+    opacity: 0.6;
+}
+
+.my-jobs-message {
+    color: #64748b;
+}
+
+.my-jobs-error {
+    color: #b91c1c;
+}

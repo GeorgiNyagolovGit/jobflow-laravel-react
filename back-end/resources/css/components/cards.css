@@ -1,0 +1,62 @@
+.job-card,
+.company-card {
+    padding: 1.35rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+    transition:
+        border-color 160ms ease,
+        transform 160ms ease,
+        box-shadow 160ms ease;
+}
+
+.job-card:hover,
+.company-card:hover {
+    transform: translateY(-2px);
+    border-color: #c7d3f8;
+    box-shadow: 0 16px 38px rgb(23 32 51 / 9%);
+}
+
+.job-card h2,
+.company-card h2 {
+    margin-bottom: 0.45rem;
+    font-size: 1.25rem;
+}
+
+.job-card h2 a,
+.company-card h2 a {
+    color: var(--color-ink);
+    text-decoration: none;
+}
+
+.job-card h2 a:hover,
+.company-card h2 a:hover {
+    color: var(--color-primary);
+}
+
+.job-card p,
+.company-card p {
+    margin-bottom: 0.45rem;
+}
+
+.job-card-company {
+    font-weight: 600;
+}
+
+.job-card-location,
+.job-card-meta {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+}
+
+.job-card-salary {
+    margin-top: 0.85rem;
+    color: var(--color-success);
+    font-weight: 700;
+}
+
+.job-card > :last-child,
+.company-card > :last-child {
+    margin-bottom: 0;
+}

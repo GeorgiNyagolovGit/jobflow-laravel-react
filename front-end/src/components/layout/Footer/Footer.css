@@ -1,0 +1,14 @@
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 24px max(20px, calc((100vw - 1120px) / 2));
+    color: var(--muted);
+    background: white;
+    border-top: 1px solid var(--border);
+}
+
+.site-footer nav {
+    display: flex;
+    gap: 18px;
+}

@@ -1,0 +1,55 @@
+.site-content .job-search-form {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+    align-items: end;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+    box-shadow: var(--shadow-card);
+}
+
+.job-search-form button[type='button'] {
+    border-color: var(--color-border);
+    background: #fff;
+    color: var(--color-ink);
+}
+
+.site-content section[aria-label='Job results'] {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: 1rem;
+}
+
+.site-content .job-results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+    gap: 1rem;
+}
+
+.site-content dl {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    gap: 1rem;
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+}
+
+.site-content dl dt,
+.site-content dl dd {
+    margin: 0;
+}
+
+.site-content > section:not([aria-label]),
+.page-shell > section:not([aria-label]) {
+    padding: 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+}
+
+.site-content > section:not([aria-label]) p:last-child,
+.page-shell > section:not([aria-label]) p:last-child {
+    margin-bottom: 0;
+}

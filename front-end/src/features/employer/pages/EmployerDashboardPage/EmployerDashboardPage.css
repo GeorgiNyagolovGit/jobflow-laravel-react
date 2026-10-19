@@ -1,0 +1,14 @@
+.dashboard-card {
+    display: block;
+    color: inherit;
+}
+
+.dashboard-card:hover {
+    border-color: #93c5fd;
+    transform: translateY(-2px);
+}
+
+.dashboard-card h2 {
+    margin: 0;
+    color: var(--ink);
+}

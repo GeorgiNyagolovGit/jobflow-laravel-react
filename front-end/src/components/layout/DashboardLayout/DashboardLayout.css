@@ -1,0 +1,17 @@
+.dashboard-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 28px;
+    width: min(1280px, calc(100% - 32px));
+    margin: 32px auto;
+}
+
+.dashboard-content {
+    min-width: 0;
+}
+
+.dashboard-content .dashboard-page {
+    width: 100%;
+    padding: 0;
+}
+@media (max-width: 800px) { .dashboard-layout { grid-template-columns: 1fr; } }

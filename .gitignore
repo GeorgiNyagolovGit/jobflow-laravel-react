@@ -1,0 +1,11 @@
+# Local credentials and workspace metadata
+.env
+.env.*
+!.env.example
+.aws/
+.codex/
+.agents/
+
+# Operating-system files
+.DS_Store
+Thumbs.db

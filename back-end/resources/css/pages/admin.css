@@ -1,0 +1,22 @@
+.site-content > label {
+    width: min(100%, 22rem);
+}
+
+.site-content li form {
+    display: inline-grid;
+    margin: 0.5rem 0.5rem 0 0;
+}
+
+.site-content button + button {
+    margin-left: 0.5rem;
+}
+
+.site-content fieldset {
+    background: var(--color-surface);
+}
+
+.site-content legend {
+    padding-inline: 0.35rem;
+    color: var(--color-muted);
+    font-weight: 600;
+}

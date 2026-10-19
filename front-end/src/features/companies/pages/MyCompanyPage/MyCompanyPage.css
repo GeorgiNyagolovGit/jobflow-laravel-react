@@ -1,0 +1,7 @@
+.dashboard-page .empty-state {
+    margin-top: 20px;
+}
+
+.dashboard-page .empty-state p {
+    margin-top: 0;
+}

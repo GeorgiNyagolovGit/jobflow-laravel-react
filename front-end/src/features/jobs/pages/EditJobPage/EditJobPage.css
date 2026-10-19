@@ -1,0 +1,14 @@
+.edit-job-page {
+    width: min(760px, calc(100% - 32px));
+    margin: 40px auto;
+}
+
+.edit-job-page h1 {
+    margin-bottom: 28px;
+    color: #0f172a;
+}
+
+.edit-job-error {
+    margin: 40px;
+    color: #b91c1c;
+}

@@ -1,0 +1,23 @@
+.site-content > ul {
+    display: grid;
+    gap: 0.75rem;
+    padding-left: 1.25rem;
+}
+
+.site-content > ul > li {
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+}
+
+.site-content nav[aria-label='Administration'],
+.site-content nav[aria-label='Employer tools'] {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-medium);
+    background: var(--color-surface);
+}

@@ -1,0 +1,41 @@
+.verify-email-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f3f4f6;
+}
+
+.verify-email-card {
+    width: 100%;
+    max-width: 520px;
+    padding: 32px;
+    background: white;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.verify-email-card button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    background: #2563eb;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.verify-email-card button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.verify-success {
+    color: #15803d;
+}
+
+.verify-error {
+    color: #dc2626;
+}

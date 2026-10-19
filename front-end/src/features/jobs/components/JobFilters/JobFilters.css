@@ -1,0 +1,192 @@
+.job-filters {
+    position: sticky;
+    top: 20px;
+    display: grid;
+    gap: 20px;
+    padding: 24px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.07);
+}
+
+.job-filters-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border);
+}
+
+.job-filters-heading span:not(.job-filters-count) {
+    color: var(--primary);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.job-filters-heading h2 {
+    margin: 4px 0 0;
+    color: var(--ink);
+    font-size: 1.35rem;
+}
+
+.job-filters-count {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    color: white;
+    background: var(--primary);
+    border-radius: 50%;
+    font-size: 0.85rem;
+    font-weight: 800;
+    place-items: center;
+}
+
+.job-filter-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.job-filter-field > label,
+.job-filter-salary legend {
+    color: var(--ink);
+    font-size: 0.84rem;
+    font-weight: 750;
+}
+
+.job-filter-field input,
+.job-filter-field select,
+.job-filter-salary input {
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 12px;
+    color: var(--ink);
+    background: white;
+    border: 1px solid #cbd5e1;
+    border-radius: 9px;
+    font: inherit;
+}
+
+.job-filter-field input:focus,
+.job-filter-field select:focus,
+.job-filter-salary input:focus {
+    outline: 3px solid #dbeafe;
+    border-color: var(--primary);
+}
+
+.job-filter-quick-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 3px;
+}
+
+.job-filter-quick-options button {
+    padding: 5px 8px;
+    color: var(--muted);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.72rem;
+}
+
+.job-filter-quick-options button:hover,
+.job-filter-quick-options button.is-active {
+    color: var(--primary);
+    background: #eff6ff;
+    border-color: #93c5fd;
+}
+
+.job-filter-salary {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.job-filter-salary legend {
+    margin-bottom: 8px;
+}
+
+.job-filter-salary > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.job-filter-salary label span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--muted);
+    font-size: 0.72rem;
+}
+
+.job-filter-actions {
+    display: grid;
+    gap: 9px;
+    padding-top: 2px;
+}
+
+.job-filter-apply,
+.job-filter-reset {
+    min-height: 45px;
+    padding: 10px 16px;
+    border-radius: 9px;
+    font-weight: 750;
+}
+
+.job-filter-apply {
+    color: white;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.job-filter-apply:hover:not(:disabled) {
+    background: var(--primary-dark);
+}
+
+.job-filter-reset {
+    color: var(--text);
+    background: white;
+    border: 1px solid #cbd5e1;
+}
+
+.job-filter-reset:hover {
+    color: var(--primary);
+    background: #f8fafc;
+}
+
+@media (max-width: 900px) {
+    .job-filters {
+        position: static;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .job-filters-heading,
+    .job-filter-actions {
+        grid-column: 1 / -1;
+    }
+
+    .job-filter-actions {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .job-filters {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .job-filters-heading,
+    .job-filter-actions {
+        grid-column: auto;
+    }
+
+    .job-filter-actions {
+        grid-template-columns: 1fr;
+    }
+}

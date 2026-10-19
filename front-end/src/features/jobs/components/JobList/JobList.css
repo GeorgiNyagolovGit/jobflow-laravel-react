@@ -1,0 +1,18 @@
+.job-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.job-list-message {
+    padding: 24px 0;
+    color: #64748b;
+}
+
+.job-list-error {
+    padding: 16px;
+    color: #b91c1c;
+    background: #fef2f2;
+    border-radius: 6px;
+}
+

@@ -1,0 +1,25 @@
+.admin-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 210px;
+    padding: 20px;
+    background: #0f172a;
+    border-radius: 14px;
+}
+
+.admin-sidebar h2 {
+    margin: 0 0 14px;
+    color: white;
+}
+
+.admin-sidebar a {
+    padding: 10px 12px;
+    color: #cbd5e1;
+    border-radius: 8px;
+}
+
+.admin-sidebar a.active {
+    color: white;
+    background: #2563eb;
+}

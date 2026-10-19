@@ -1,0 +1,43 @@
+.company-card {
+    display: flex;
+    gap: 18px;
+    padding: 22px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.company-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.company-card h2 {
+    margin: 0 0 6px;
+    color: var(--ink);
+}
+
+.company-card p {
+    margin: 4px 0;
+    color: var(--muted);
+}
+
+.company-logo {
+    display: grid;
+    flex: 0 0 54px;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    color: #1d4ed8;
+    background: #dbeafe;
+    border-radius: 14px;
+    font-size: 1.4rem;
+    font-weight: 900;
+}
+
+.company-logo.large {
+    width: 82px;
+    height: 82px;
+    font-size: 2rem;
+}

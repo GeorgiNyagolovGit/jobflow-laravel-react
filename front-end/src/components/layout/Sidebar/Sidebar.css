@@ -1,0 +1,30 @@
+.dashboard-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: fit-content;
+    padding: 18px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.dashboard-sidebar a {
+    padding: 10px 12px;
+    color: var(--text);
+    border-radius: 8px;
+}
+
+.dashboard-sidebar a.active {
+    color: var(--primary);
+    background: #eff6ff;
+    font-weight: 750;
+}
+
+.sidebar-user {
+    margin: 0 0 12px;
+    padding: 0 12px 12px;
+    color: var(--ink);
+    font-weight: 800;
+    border-bottom: 1px solid var(--border);
+}
