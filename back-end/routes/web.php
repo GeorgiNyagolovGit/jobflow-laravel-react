@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CompanyController as AdminCompanyController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\JobController as AdminJobController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -24,11 +25,16 @@ use Illuminate\Support\Facades\Route;
  * protection work through the Vite development proxy.
  */
 Route::prefix('api')->group(function (): void {
+    // Public API
     Route::get('/csrf-cookie', fn () => response()->noContent());
 
     Route::get('/jobs', [JobController::class, 'index']);
     Route::get('/jobs/{job}', [JobController::class, 'show'])->whereNumber('job');
+    Route::get('/companies', [CompanyController::class, 'index']);
+    Route::get('/companies/{company}', [CompanyController::class, 'show'])
+        ->whereNumber('company');
 
+    // Authentication endpoints consumed by the standalone React application.
     Route::middleware('guest')->group(function (): void {
         Route::post('/login', [LoginController::class, 'store']);
         Route::post('/register', [RegisterController::class, 'store']);
@@ -41,6 +47,56 @@ Route::prefix('api')->group(function (): void {
             'user' => $request->user()->load('roles'),
         ]));
         Route::post('/logout', [LoginController::class, 'destroy']);
+
+        Route::get('/profile', [ProfileController::class, 'edit']);
+        Route::patch('/profile', [ProfileController::class, 'update']);
+        Route::put('/settings/password', [SettingsController::class, 'updatePassword']);
+
+        Route::get('/my-company', [CompanyController::class, 'mine']);
+        Route::post('/companies', [CompanyController::class, 'store']);
+        Route::put('/companies/{company}', [CompanyController::class, 'update'])
+            ->whereNumber('company');
+
+        Route::get('/favorites', [FavoriteJobController::class, 'index']);
+        Route::post('/jobs/{job}/favorite', [FavoriteJobController::class, 'store'])
+            ->whereNumber('job');
+        Route::delete('/jobs/{job}/favorite', [FavoriteJobController::class, 'destroy'])
+            ->whereNumber('job');
+
+        Route::post('/jobs/{job}/applications', [JobApplicationController::class, 'store'])
+            ->whereNumber('job');
+        Route::get('/applications', [JobApplicationController::class, 'candidateIndex']);
+        Route::delete('/applications/{application}', [JobApplicationController::class, 'destroy'])
+            ->whereNumber('application');
+    });
+
+    Route::middleware(['auth', 'role:employer'])->group(function (): void {
+        Route::get('/my-jobs', [CompanyJobController::class, 'index']);
+        Route::post('/jobs', [CompanyJobController::class, 'store']);
+        Route::put('/jobs/{job}', [CompanyJobController::class, 'update'])
+            ->whereNumber('job');
+        Route::delete('/jobs/{job}', [CompanyJobController::class, 'destroy'])
+            ->whereNumber('job');
+        Route::get('/employer/applications', [JobApplicationController::class, 'index']);
+        Route::put('/employer/applications/{application}', [JobApplicationController::class, 'update'])
+            ->whereNumber('application');
+    });
+
+    Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function (): void {
+        Route::get('/stats', AdminDashboardController::class);
+        Route::get('/users', [AdminUserController::class, 'index']);
+        Route::put('/users/{user}', [AdminUserController::class, 'update'])
+            ->whereNumber('user');
+        Route::delete('/users/{user}', [AdminUserController::class, 'destroy'])
+            ->whereNumber('user');
+        Route::get('/jobs', [AdminJobController::class, 'index']);
+        Route::delete('/jobs/{job}', [AdminJobController::class, 'destroy'])
+            ->whereNumber('job');
+        Route::get('/companies', [AdminCompanyController::class, 'index']);
+        Route::patch('/companies/{company}', [AdminCompanyController::class, 'update'])
+            ->whereNumber('company');
+        Route::delete('/companies/{company}', [AdminCompanyController::class, 'destroy'])
+            ->whereNumber('company');
     });
 });
 

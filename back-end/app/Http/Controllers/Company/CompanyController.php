@@ -32,6 +32,16 @@ class CompanyController extends Controller
         ]);
     }
 
+    public function mine(Request $request)
+    {
+        return response()->json([
+            'company' => $request->user()
+                ->companies()
+                ->latest()
+                ->firstOrFail(),
+        ]);
+    }
+
     public function create()
     {
         $this->authorize('create', Company::class);

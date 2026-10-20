@@ -10,6 +10,17 @@ use Illuminate\Validation\Rule;
 
 class JobApplicationController extends Controller
 {
+    public function candidateIndex(Request $request)
+    {
+        return response()->json([
+            'applications' => $request->user()
+                ->applications()
+                ->with(['job.company', 'job.category', 'job.jobType'])
+                ->latest('applied_at')
+                ->paginate(15),
+        ]);
+    }
+
     public function index(Request $request)
     {
         $applications = JobApplication::with(['job.company', 'user'])
