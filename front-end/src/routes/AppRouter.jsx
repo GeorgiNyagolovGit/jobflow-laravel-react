@@ -10,6 +10,7 @@ import ApplyJobPage from '../features/applications/pages/ApplyJobPage/ApplyJobPa
 import ManageApplicationsPage from '../features/applications/pages/ManageApplicationsPage/ManageApplicationsPage'
 import MyApplicationsPage from '../features/applications/pages/MyApplicationsPage/MyApplicationsPage'
 import ForgotPasswordPage from '../features/auth/pages/ForgotPasswordPage/ForgotPasswordPage'
+import GoogleAuthCallbackPage from '../features/auth/pages/GoogleAuthCallbackPage/GoogleAuthCallbackPage'
 import LoginPage from '../features/auth/pages/LoginPage/LoginPage'
 import RegisterPage from '../features/auth/pages/RegisterPage/RegisterPage'
 import ResetPasswordPage from '../features/auth/pages/ResetPasswordPage/ResetPasswordPage'
@@ -65,6 +66,7 @@ export default function AppRouter() {
                     <Route path="forgot-password" element={<ForgotPasswordPage />} />
                     <Route path="reset-password" element={<ResetPasswordPage />} />
                     <Route path="verify-email" element={<VerifyEmailPage />} />
+                    <Route path="auth/google/callback" element={<GoogleAuthCallbackPage />} />
 
                     <Route element={<ProtectedRoute />}>
                         <Route path="jobs/:id/apply" element={<ApplyJobPage />} />

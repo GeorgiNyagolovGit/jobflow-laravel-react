@@ -1,4 +1,5 @@
 import api from '../../../api/axios'
+import { backendOrigin } from '../../../api/axios'
 
 const authApi = {
     async getCsrfCookie() {
@@ -41,6 +42,10 @@ const authApi = {
     async resendVerification() {
         const response = await api.post('/email/verification-notification')
         return response.data
+    },
+
+    loginWithGoogle() {
+        window.location.assign(`${backendOrigin}/auth/google/redirect`)
     },
 }
 

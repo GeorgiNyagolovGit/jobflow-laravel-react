@@ -47,3 +47,12 @@
 .auth-error {
     color: #dc2626;
 }
+.google-auth-button {
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    color: #1e293b;
+}
+
+.google-auth-button:hover {
+    background: #f8fafc;
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
+import authApi from '../../api/authApi'
 import './RegisterForm.css'
 
 export default function RegisterForm() {
@@ -98,6 +99,10 @@ export default function RegisterForm() {
 
             <button type="submit" disabled={loading}>
                 {loading ? 'Creating account...' : 'Register'}
+            </button>
+
+            <button type="button" className="google-auth-button" onClick={() => authApi.loginWithGoogle()}>
+                Continue with Google
             </button>
 
             <p>

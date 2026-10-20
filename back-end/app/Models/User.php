@@ -19,6 +19,7 @@ class User extends Authenticatable
         'phone',
         'avatar',
         'bio',
+        'google_id',
         'is_active',
     ];
 

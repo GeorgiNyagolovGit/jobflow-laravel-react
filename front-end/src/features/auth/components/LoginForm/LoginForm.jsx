@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import useAuth from '../../hooks/useAuth'
+import authApi from '../../api/authApi'
 import './LoginForm.css'
 
 export default function LoginForm() {
@@ -83,6 +84,10 @@ export default function LoginForm() {
 
             <button type="submit" disabled={loading}>
                 {loading ? 'Signing in...' : 'Sign in'}
+            </button>
+
+            <button type="button" className="google-auth-button" onClick={() => authApi.loginWithGoogle()}>
+                Continue with Google
             </button>
 
             <Link to="/forgot-password">Forgot password?</Link>

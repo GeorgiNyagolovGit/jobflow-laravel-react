@@ -6,6 +6,10 @@ const baseURL = configuredApiUrl
     ? `${configuredApiUrl.replace(/\/api$/, '')}/api`
     : '/api'
 
+export const backendOrigin = configuredApiUrl
+    ? configuredApiUrl.replace(/\/api$/, '')
+    : ''
+
 const api = axios.create({
     // Accept either https://api.example.com or https://api.example.com/api.
     // This removes a common production-only 404 caused by a missing /api suffix.
