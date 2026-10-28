@@ -15,6 +15,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Job\FavoriteJobController;
 use App\Http\Controllers\Job\JobApplicationController;
 use App\Http\Controllers\Job\JobController;
+use App\Http\Controllers\User\CvController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\SettingsController;
 use Illuminate\Http\Request;
@@ -56,6 +57,9 @@ Route::prefix('api')->group(function (): void {
 
         Route::get('/profile', [ProfileController::class, 'edit']);
         Route::patch('/profile', [ProfileController::class, 'update']);
+        Route::post('/profile/cv', [CvController::class, 'store']);
+        Route::get('/profile/cv', [CvController::class, 'download']);
+        Route::delete('/profile/cv', [CvController::class, 'destroy']);
         Route::put('/settings/password', [SettingsController::class, 'updatePassword']);
 
         Route::get('/my-company', [CompanyController::class, 'mine']);

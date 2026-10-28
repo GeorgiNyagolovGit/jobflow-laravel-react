@@ -21,7 +21,6 @@ export default function Sidebar() {
                     <NavLink to="/my-jobs">My jobs</NavLink>
                 </>
             )}
-            {roles.includes('admin') && <NavLink to="/admin">Administration</NavLink>}
         </aside>
     )
 }

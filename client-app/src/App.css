@@ -160,9 +160,7 @@
 }
 
 .panel-form button,
-.admin-list button,
-.application-actions button,
-.admin-table button {
+.application-actions button {
     width: fit-content;
     margin-top: 10px;
     padding: 10px 16px;
@@ -188,8 +186,7 @@
     text-align: center;
 }
 
-.card-list,
-.admin-list {
+.card-list {
     display: grid;
     gap: 14px;
 }

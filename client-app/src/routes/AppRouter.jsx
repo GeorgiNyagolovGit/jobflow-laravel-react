@@ -2,10 +2,6 @@ import { BrowserRouter, Link, Navigate, Route, Routes } from 'react-router-dom'
 
 import DashboardLayout from '../components/layout/DashboardLayout/DashboardLayout'
 import MainLayout from '../components/layout/MainLayout/MainLayout'
-import AdminCompaniesPage from '../features/admin/pages/AdminCompaniesPage/AdminCompaniesPage'
-import AdminDashboardPage from '../features/admin/pages/AdminDashboardPage/AdminDashboardPage'
-import AdminJobsPage from '../features/admin/pages/AdminJobsPage/AdminJobsPage'
-import AdminUsersPage from '../features/admin/pages/AdminUsersPage/AdminUsersPage'
 import ApplyJobPage from '../features/applications/pages/ApplyJobPage/ApplyJobPage'
 import ManageApplicationsPage from '../features/applications/pages/ManageApplicationsPage/ManageApplicationsPage'
 import MyApplicationsPage from '../features/applications/pages/MyApplicationsPage/MyApplicationsPage'
@@ -77,7 +73,7 @@ export default function AppRouter() {
                             <Route path="applications" element={<MyApplicationsPage />} />
                             <Route path="favorites" element={<FavoritesPage />} />
 
-                            <Route element={<RoleRoute roles={['employer', 'admin']} />}>
+                            <Route element={<RoleRoute roles={['employer']} />}>
                                 <Route path="employer" element={<EmployerDashboardPage />} />
                                 <Route path="my-company" element={<MyCompanyPage />} />
                                 <Route path="companies/create" element={<CreateCompanyPage />} />
@@ -88,12 +84,6 @@ export default function AppRouter() {
                                 <Route path="manage-applications" element={<ManageApplicationsPage />} />
                             </Route>
 
-                            <Route element={<RoleRoute roles={['admin']} />}>
-                                <Route path="admin" element={<AdminDashboardPage />} />
-                                <Route path="admin/users" element={<AdminUsersPage />} />
-                                <Route path="admin/jobs" element={<AdminJobsPage />} />
-                                <Route path="admin/companies" element={<AdminCompaniesPage />} />
-                            </Route>
                         </Route>
                     </Route>
 

@@ -19,6 +19,8 @@ class User extends Authenticatable
         'phone',
         'avatar',
         'bio',
+        'cv_path',
+        'cv_original_name',
         'google_id',
         'is_active',
     ];
@@ -26,6 +28,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'cv_path',
     ];
 
     protected $casts = [
@@ -33,6 +36,15 @@ class User extends Authenticatable
         'password' => 'hashed',
         'is_active' => 'boolean',
     ];
+
+    protected $appends = [
+        'has_cv',
+    ];
+
+    public function getHasCvAttribute(): bool
+    {
+        return $this->cv_path !== null;
+    }
 
     public function roles(): BelongsToMany
     {
